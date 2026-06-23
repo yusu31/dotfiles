@@ -2,7 +2,7 @@
   "_comment": "VS Code / Cursor の settings.json に追加するスニペット",
   "_howto": "Ctrl+Shift+P → 'Open User Settings JSON' を開いて、このブロックを追加する",
 
-  "terminal.integrated.fontFamily": "CaskaydiaCove Nerd Font",
+  "terminal.integrated.fontFamily": "CaskaydiaCove NFM",
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.2,
   "terminal.integrated.cursorStyle": "line",
