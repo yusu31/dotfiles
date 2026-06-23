@@ -1,0 +1,31 @@
+{
+  "_comment": "このファイルの内容を ~/.claude/settings.json の hooks セクションに追加する",
+  "_howto": "setup.ps1 を実行すると自動でマージされます",
+
+  "hooks": {
+    "PostToolUse": [
+      {
+        "_comment": "ファイル編集後に通知を表示",
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"Write-Host '[Claude] ファイルを変更しました。テストを忘れずに。' -ForegroundColor Yellow\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "_comment": "危険なコマンドの実行前に警告を表示",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -Command \"Write-Host '[Claude] Bashコマンドを実行します' -ForegroundColor Cyan\""
+          }
+        ]
+      }
+    ]
+  }
+}

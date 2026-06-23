@@ -1,0 +1,87 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 3,
+  "final_space": true,
+  "console_title_template": "{{ .Shell }} | {{ .Folder }}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "os",
+          "style": "diamond",
+          "leading_diamond": "╭─",
+          "background": "#1e1e2e",
+          "foreground": "#89b4fa",
+          "template": " {{ .Icon }} "
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "background": "#313244",
+          "foreground": "#cdd6f4",
+          "properties": {
+            "style": "folder",
+            "max_depth": 2,
+            "home_icon": "~",
+            "folder_icon": ""
+          },
+          "template": "  {{ .Path }} "
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "background": "#a6e3a1",
+          "foreground": "#1e1e2e",
+          "background_templates": [
+            "{{ if .Detached }}#f38ba8{{ end }}",
+            "{{ if gt .Working.Added 0 }}#fab387{{ end }}",
+            "{{ if gt .Working.Modified 0 }}#f9e2af{{ end }}"
+          ],
+          "properties": {
+            "fetch_status": true,
+            "branch_icon": " "
+          },
+          "template": " {{ .HEAD }}{{ if .Working.Changed }} ✗{{ else }} ✓{{ end }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "background": "#585b70",
+          "foreground": "#cdd6f4",
+          "properties": {
+            "threshold": 2000,
+            "style": "austin"
+          },
+          "template": " ⏱ {{ .FormattedMs }} "
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "trailing_diamond": "",
+          "background": "#45475a",
+          "foreground": "#bac2de",
+          "template": "  {{ .CurrentDate | date .Format }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#89b4fa",
+          "template": "╰─ "
+        }
+      ]
+    }
+  ]
+}

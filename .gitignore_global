@@ -1,0 +1,67 @@
+# ============================================================
+#  グローバル .gitignore
+#  すべてのGitリポジトリで無視するファイル
+# ============================================================
+
+# ── 環境変数・シークレット（絶対にコミットしない）───────────
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.json
+credentials.json
+
+# ── OS が自動生成するファイル ─────────────────────────────
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS（チームに Mac ユーザーがいる場合の対策）
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# ── IDE・エディタ ─────────────────────────────────────────
+# VS Code / Cursor（個人設定は共有しない）
+.vscode/settings.json
+.vscode/launch.json
+.vscode/*.code-snippets
+.cursor/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# ── ログ・一時ファイル ────────────────────────────────────
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ── 依存関係（リポジトリに含めない）─────────────────────
+node_modules/
+.npm
+.yarn/cache
+
+# ── ビルド成果物 ──────────────────────────────────────────
+dist/
+build/
+target/
+out/
+*.class
+*.jar
+*.war
